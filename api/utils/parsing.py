@@ -66,7 +66,10 @@ def parse_quota(text: str) -> Dict:
 
     # Change some of the columns type to numeric.
     for name in names[1:]:                          # Exclude the Date
-        df[name] = pd.to_numeric(df[name])
+        try:
+            df[name] = pd.to_numeric(df[name])
+        except ValueError:
+            df[name] = df[name]
 
     # Convert it into a json.
     data_json = {name : df[name].to_list() for name in names}
