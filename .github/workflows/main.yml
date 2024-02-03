@@ -58,7 +58,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
       - run: |
-          git fetch --prine --unshallow
+          git fetch --prune --unshallow
 
       - name: Deploy to Heroku
         env:
