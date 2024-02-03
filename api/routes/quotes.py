@@ -29,6 +29,6 @@ async def dividend(path: PathParam = Depends(), query: QuoteQuery = Depends()) -
 
 @router.get("/stock-split/dates/{symbol}")
 async def stock_split(path: PathParam = Depends(), query: QuoteQuery = Depends()) -> JSONResponse:
-    query.event = "div"
+    query.event = "split"
     resp = fetch_quote(path, query, "URL_QUOTES")
     return JSONResponse(status_code=status.HTTP_200_OK, content=resp, media_type="application/json")
