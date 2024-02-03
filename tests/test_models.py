@@ -40,17 +40,17 @@ def test_quote_param_model() -> None:
     quote_query = QuoteQuery()
     assert quote_query.range == "1y"
     assert quote_query.interval == "1d"
-    assert quote_query.event is None
+    assert quote_query.events is None
 
     quote_query = QuoteQuery(range="5y", interval="1wk", event="history")
     assert quote_query.range == "5y"
     assert quote_query.interval == "1wk"
-    assert quote_query.event == "history"
+    assert quote_query.events == "history"
 
     quote_query = QuoteQuery(range="MAX", interval="1mo", event="div")
     assert quote_query.range == "MAX"
     assert quote_query.interval == "1mo"
-    assert quote_query.event == "div"
+    assert quote_query.events == "div"
 
     with pytest.raises(ValidationError):
         quote_query = QuoteQuery(range="8y", interval="1d", event="split")

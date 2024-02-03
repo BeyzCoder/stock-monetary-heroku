@@ -17,4 +17,4 @@ class QuoteQuery(BaseModel):
     """Specifically for quotes route query parameters."""
     range: YearRange = YearRange.one_year
     interval: IntervalDate = IntervalDate.daily
-    event: Optional[EventShow] = None
+    events: Optional[EventShow] = None
