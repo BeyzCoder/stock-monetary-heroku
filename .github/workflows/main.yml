@@ -57,7 +57,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
-      - run: git fetch --prine --unshallow
+      - run: |
+          git fetch --prine --unshallow
 
       - name: Deploy to Heroku
         env:
