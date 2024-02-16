@@ -5,7 +5,7 @@ class YearRange(str, Enum):
     """Years choices."""
     one_year = "1y"
     five_year = "5y"
-    max_year = "MAX"
+    ten_year = "10y"
 
 
 class IntervalDate(str, Enum):
@@ -26,3 +26,4 @@ class Frequency(str, Enum):
     """Data frequency."""
     annually = "annually"
     quarterly = "quarterly"
+    short_q = "Q"

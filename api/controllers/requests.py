@@ -53,7 +53,7 @@ def fetch_statement(path: PathParam, query: StatementQuery, route_key: str) -> D
     except ValueError as err:
         return str(err)
 
-    if query.freq == "quarterly":
+    if query.freq == "quarterly" or query.freq == "Q":
         api_website = api_website + "quarterly/"
 
     api_website = api_website.format(path.symbol)
